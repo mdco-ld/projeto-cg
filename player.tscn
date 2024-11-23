@@ -1,75 +1,30 @@
 [gd_scene load_steps=8 format=3 uid="uid://d2d6gk4txrbkc"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_bqdid"]
-[ext_resource type="PackedScene" uid="uid://dlstsa481xxjn" path="res://KakaPrime.glb" id="2_y3ky3"]
+[ext_resource type="PackedScene" uid="uid://chycett2dk0lb" path="res://5YearsOldBoy.glb" id="2_5kkjo"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dwqol"]
+animation = &"Nadar"
+use_custom_timeline = true
+timeline_length = 1.0
+stretch_time_scale = true
+start_offset = 0.0
+loop_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pn5hj"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_f2203"]
+states/Nadar/node = SubResource("AnimationNodeAnimation_dwqol")
+states/Nadar/position = Vector2(357, 100)
+states/Start/position = Vector2(120, 82)
+transitions = ["Start", "Nadar", SubResource("AnimationNodeStateMachineTransition_pn5hj")]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rft75"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_46suv"]
 height = 0.443761
 radius = 1.0
-
-[sub_resource type="Animation" id="Animation_fw8p4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Character:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/Character:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_8fedt"]
-resource_name = "float"
-length = 1.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Character:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.5, 1.2),
-"transitions": PackedFloat32Array(0.420448, 0.482968, 1.03527),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.139626, 0, 0), Vector3(-0.15708, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/Character:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.3, 0.7, 1.2),
-"transitions": PackedFloat32Array(0.420448, 2.07053, 1.03527),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.65, 0), Vector3(0, 0.35, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_q8gdc"]
-_data = {
-"RESET": SubResource("Animation_fw8p4"),
-"float": SubResource("Animation_8fedt")
-}
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.185599)
@@ -78,8 +33,25 @@ script = ExtResource("1_bqdid")
 
 [node name="Pivot" type="Node3D" parent="."]
 
-[node name="KakaPrime" parent="Pivot" instance=ExtResource("2_y3ky3")]
-transform = Transform3D(-0.402836, 0.0185287, 0.000363855, 0, 0.0079175, -0.403184, -0.0185322, -0.402758, -0.00790914, -0.0795442, 0.089333, 0.816151)
+[node name="5YearsOldBoy" parent="Pivot" instance=ExtResource("2_5kkjo")]
+transform = Transform3D(-0.646994, 5.6562e-08, 0, 2.4724e-15, 2.8281e-08, -0.646994, -5.6562e-08, -0.646994, -2.8281e-08, -0.134857, 0.0830405, 1.36028)
+
+[node name="Skeleton3D" parent="Pivot/5YearsOldBoy/Esqueleto" index="0"]
+bones/4/rotation = Quaternion(0.55207, 0.520559, 0.485457, -0.434244)
+bones/5/rotation = Quaternion(0.483784, 0.126446, -0.277483, 0.820346)
+bones/27/rotation = Quaternion(0.55207, -0.520559, -0.485457, -0.434245)
+bones/28/rotation = Quaternion(-0.510181, -0.188846, -0.0982904, 0.833301)
+bones/55/rotation = Quaternion(0.0570531, 0.99817, 0.0199515, -0.00170296)
+bones/56/rotation = Quaternion(-3.55811e-07, 0.613304, 0.789847, -1.19415e-07)
+bones/60/rotation = Quaternion(0.962233, 0.0114537, -0.0179972, 0.271391)
+bones/63/rotation = Quaternion(0.996176, -0.0595887, 0.0118802, -0.0627816)
+bones/64/rotation = Quaternion(0.0705111, -0.0117513, -0.0630223, 0.995449)
+bones/65/rotation = Quaternion(-0.704209, 0.0444457, -0.0442447, 0.707218)
+
+[node name="AnimationTree" type="AnimationTree" parent="Pivot"]
+root_node = NodePath("../5YearsOldBoy")
+tree_root = SubResource("AnimationNodeStateMachine_f2203")
+anim_player = NodePath("../5YearsOldBoy/AnimationPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_rft75")
@@ -92,10 +64,6 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.121115, 0)
 shape = SubResource("CylinderShape3D_46suv")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_q8gdc")
-}
-autoplay = "float"
-
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]
+
+[editable path="Pivot/5YearsOldBoy"]
