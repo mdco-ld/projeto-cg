@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ws8wol4078vx"]
+[gd_scene load_steps=14 format=3 uid="uid://ws8wol4078vx"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7aiuq"]
 [ext_resource type="PackedScene" uid="uid://d2d6gk4txrbkc" path="res://player.tscn" id="1_l5300"]
@@ -14,6 +14,8 @@ albedo_color = Color(0.298912, 0.466389, 0.194943, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ahof1"]
 material = SubResource("StandardMaterial3D_2pl6f")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0q8cl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjt4f"]
 albedo_color = Color(0.793906, 0.166858, 0.630346, 1)
@@ -48,6 +50,10 @@ shape = SubResource("BoxShape3D_vv60a")
 transform = Transform3D(60, 0, 0, 0, 2, 0, 0, 0, 60, 0, -1, 0)
 mesh = SubResource("BoxMesh_ahof1")
 skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(6.46581e-14, 1.47921e-06, 33.8403, 33.8403, -1.47921e-06, 0, 1.47921e-06, 33.8403, -1.47921e-06, -0.926235, 23.4396, -30.7277)
+mesh = SubResource("PlaneMesh_0q8cl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.587785, 0.809017, 0, -0.809017, 0.587785, 0, 20, 30)

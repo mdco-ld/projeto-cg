@@ -1,38 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://drmm8o2ndr8tm"]
 
 [ext_resource type="Script" path="res://mob.gd" id="1_nuqos"]
-[ext_resource type="PackedScene" uid="uid://cf4ckcj2v538s" path="res://art/mob.glb" id="2_cwmqt"]
+[ext_resource type="PackedScene" uid="uid://bt4qtwy7tjeol" path="res://tubarao.glb" id="2_24iey"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_h4nsp"]
-size = Vector3(1.88453, 0.879397, 2.14063)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lxt25"]
 
 [sub_resource type="Animation" id="Animation_xnyd5"]
 resource_name = "float"
 length = 1.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Character:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.3, 0.7, 1.2),
-"transitions": PackedFloat32Array(0.420448, 2.07053, 1.03527),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.65, 0), Vector3(0, 0.35, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/Character:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.5, 1.2),
-"transitions": PackedFloat32Array(0.420448, 0.482968, 1.03527),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.139626, 0, 0), Vector3(-0.15708, 0, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kboyy"]
 _data = {
@@ -46,15 +21,15 @@ script = ExtResource("1_nuqos")
 
 [node name="Pivot" type="Node3D" parent="."]
 
-[node name="Character" parent="Pivot" instance=ExtResource("2_cwmqt")]
-transform = Transform3D(1, 0, 0, 0, 0.987688, 0.156434, 0, -0.156434, 0.987688, 0, 0.35, 0)
+[node name="tubarao" parent="Pivot" instance=ExtResource("2_24iey")]
+transform = Transform3D(-1.93649, 0, 1.7036e-07, 0, 1.93649, 0, -1.69293e-07, 0, -1.9487, -0.00155449, 0.595682, -1.18374)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0148555, 0.178954, 0.0280465)
-shape = SubResource("BoxShape3D_h4nsp")
+transform = Transform3D(0.864854, 0.0111625, -0.000258894, 4.93651e-05, -0.0544935, -0.910693, -0.00723085, 1.33472, -0.0371792, -0.00155449, 0.562233, 0.0996829)
+shape = SubResource("CapsuleShape3D_lxt25")
 
 [node name="VisibilityNotifier" type="VisibleOnScreenNotifier3D" parent="."]
-transform = Transform3D(0.999997, -1.06044e-10, -0.00242601, 1.06044e-10, 1, -1.27665e-13, 0.00242601, -1.27665e-13, 0.999997, 0, 0.38429, -0.129338)
+transform = Transform3D(1.5169, -1.60856e-10, -0.00370317, 1.60859e-10, 1.51688, -1.94873e-13, 0.00368003, -1.93653e-13, 1.52644, -0.0170548, 0.544173, 0.412717)
 aabb = AABB(-1.36115, -0.779985, -1.46779, 2.72229, 1.55997, 3.62016)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
