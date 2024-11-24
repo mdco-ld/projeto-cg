@@ -1,41 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://drmm8o2ndr8tm"]
+[gd_scene load_steps=4 format=3 uid="uid://bqbi8q6a8p5wb"]
 
-[ext_resource type="Script" path="res://mob.gd" id="1_nuqos"]
-[ext_resource type="PackedScene" uid="uid://bt4qtwy7tjeol" path="res://tubarao.glb" id="2_24iey"]
+[ext_resource type="Script" path="res://mob.gd" id="1_snxmm"]
+[ext_resource type="PackedScene" uid="uid://bg68kn11j3ft8" path="res://art/mob.glb" id="2_w446o"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lxt25"]
-
-[sub_resource type="Animation" id="Animation_xnyd5"]
-resource_name = "float"
-length = 1.2
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kboyy"]
-_data = {
-"float": SubResource("Animation_xnyd5")
-}
+[sub_resource type="SphereShape3D" id="SphereShape3D_ghnuj"]
+radius = 1.5
 
 [node name="Mob" type="CharacterBody3D" groups=["mob"]]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("1_nuqos")
+script = ExtResource("1_snxmm")
 
 [node name="Pivot" type="Node3D" parent="."]
 
-[node name="tubarao" parent="Pivot" instance=ExtResource("2_24iey")]
-transform = Transform3D(-1.93649, 0, 1.7036e-07, 0, 1.93649, 0, -1.69293e-07, 0, -1.9487, -0.00155449, 0.595682, -1.18374)
+[node name="mob" parent="Pivot" instance=ExtResource("2_w446o")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.864854, 0.0111625, -0.000258894, 4.93651e-05, -0.0544935, -0.910693, -0.00723085, 1.33472, -0.0371792, -0.00155449, 0.562233, 0.0996829)
-shape = SubResource("CapsuleShape3D_lxt25")
+shape = SubResource("SphereShape3D_ghnuj")
 
-[node name="VisibilityNotifier" type="VisibleOnScreenNotifier3D" parent="."]
-transform = Transform3D(1.5169, -1.60856e-10, -0.00370317, 1.60859e-10, 1.51688, -1.94873e-13, 0.00368003, -1.93653e-13, 1.52644, -0.0170548, 0.544173, 0.412717)
-aabb = AABB(-1.36115, -0.779985, -1.46779, 2.72229, 1.55997, 3.62016)
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_kboyy")
-}
-autoplay = "float"
-
-[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_visibility_notifier_screen_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

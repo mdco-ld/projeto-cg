@@ -1,34 +1,49 @@
-extends Node
+extends Node3D
 
-@export var mob_scene: PackedScene
+var mob_scene = preload("res://mob.tscn")
+var amigo_scene = preload("res://amigo.tscn")
+
+var health = 5
+var score = 0
 
 func _ready():
-	$UserInterface/Retry.hide()
-	
-func _on_mob_timer_timeout():
-	# Create a new instance of the Mob scene
+	$UserInterface/RetryScreen.hide()
+	$UserInterface/NextLevelScreen.hide()
+
+func _on_timer_timeout() -> void:
 	var mob = mob_scene.instantiate()
-
-	# Choose a random location on the SpawnPath
-	# We store the reference to the SpawnLocation node and give it a random offset
-	var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
+	var mob_spawn_location = get_node("SpawnPath/SpawnPosition")
 	mob_spawn_location.progress_ratio = randf()
-
-	var player_position = $Player.position
-	mob.initialize(mob_spawn_location.position, player_position)
-
-	# Spawn the mob by adding it to the Main scene
+	mob.initialize(mob_spawn_location.position, $Player.position)
 	add_child(mob)
-	
-	# We connect the mob to the score label to update the score upon squashing one.
-	mob.squashed.connect($UserInterface/ScoreLabel._on_mob_squashed.bind())
+
+func _on_amigo_timer_timeout() -> void:
+	var amigo = amigo_scene.instantiate()
+	var amigo_spawn_location = get_node("SpawnPath/SpawnPosition")
+	amigo_spawn_location.progress_ratio = randf()
+	amigo.initialize(amigo_spawn_location.position, $Player.position)
+	add_child(amigo)
 
 
-func _on_player_hit():
-	$MobTimer.stop()
-	$UserInterface/Retry.show()
+func _on_player_hit() -> void:
+	health -= 1
+	if(health <= 0):
+		$AmigoTimer.stop()
+		$MobTimer.stop()
+		$Player.queue_free()
+		$UserInterface/RetryScreen.show()
+		
+func _on_player_catch() -> void:
+	score += 1
+	if(score >= 5):
+		$AmigoTimer.stop()
+		$MobTimer.stop()
+		$Player.queue_free()
+		$UserInterface/NextLevelScreen.show()
 
-func _unhandled_input(event):
-	if event.is_action_pressed("ui_accept") and $UserInterface/Retry.visible:
-		# This restarts the current scene.
+		
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action("ui_accept") and $UserInterface/RetryScreen.visible:
 		get_tree().reload_current_scene()
+	if event.is_action("ui_accept") and $UserInterface/NextLevelScreen.visible:
+		get_tree().change_scene_to_file("res://level_2.tscn")

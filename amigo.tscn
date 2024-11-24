@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0fhvvy8vp1vi"]
+
+[ext_resource type="Script" path="res://mob.gd" id="1_pnymw"]
+[ext_resource type="PackedScene" uid="uid://caq3jaff27w66" path="res://art/amigo.glb" id="2_03n4l"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ghnuj"]
+radius = 1.5
+
+[node name="Amigo" type="CharacterBody3D" groups=["amigo"]]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_pnymw")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="amigo" parent="Pivot" instance=ExtResource("2_03n4l")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ghnuj")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
