@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d3icya6p4g4ha"]
+[gd_scene load_steps=14 format=3 uid="uid://d3icya6p4g4ha"]
 
 [ext_resource type="PackedScene" uid="uid://b3dqtg4ixmken" path="res://player.tscn" id="1_lox15"]
 [ext_resource type="Script" path="res://main.gd" id="1_wjhy3"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://b2ti8nqdk1jsp" path="res://coralgg.glb" id="6_lt55f"]
 [ext_resource type="PackedScene" uid="uid://cpk2pntxkx023" path="res://coralespiral.glb" id="7_udxkl"]
 [ext_resource type="PackedScene" uid="uid://cn4wiafttjv54" path="res://coralbolha.glb" id="8_peuvv"]
-[ext_resource type="PackedScene" uid="uid://uy1smhmytx77" path="res://cavalomarinho.glb" id="9_c2tm8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gwcb1"]
 size = Vector3(60, 2, 60)
@@ -171,12 +170,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -14)
 [node name="coralbolha" parent="." instance=ExtResource("8_peuvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -14)
 
-[node name="cavalomarinho" parent="." instance=ExtResource("9_c2tm8")]
-transform = Transform3D(0.75, -0.5, -0.433013, 0.433013, 0.866025, -0.25, 0.5, 0, 0.866025, 8, 1, -14)
-
-[node name="cavalomarinho2" parent="." instance=ExtResource("9_c2tm8")]
-transform = Transform3D(-0.4, 0, -0.69282, 0, 0.8, 0, 0.69282, 0, -0.4, 14, 2, -11)
-
 [node name="coralbolha2" parent="." instance=ExtResource("8_peuvv")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -18, 0, 25)
 
@@ -188,9 +181,6 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 12, 0, 21)
 
 [node name="coralespiral5" parent="." instance=ExtResource("7_udxkl")]
 transform = Transform3D(1.17, 0, 0, 0, 1.17, 0, 0, 0, 1.17, 14, 0, 17)
-
-[node name="cavalomarinho3" parent="." instance=ExtResource("9_c2tm8")]
-transform = Transform3D(0.824491, 0.203333, -0.984312, -0.323461, 1.25907, -0.0108508, 0.951624, 0.251795, 0.849124, 12, 2, 19)
 
 [connection signal="catch" from="Player" to="." method="_on_player_catch"]
 [connection signal="catch" from="Player" to="UserInterface/ScoreLabel" method="_on_player_catch"]
