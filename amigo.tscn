@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0fhvvy8vp1vi"]
 
 [ext_resource type="Script" path="res://mob.gd" id="1_pnymw"]
-[ext_resource type="PackedScene" uid="uid://caq3jaff27w66" path="res://art/amigo.glb" id="2_03n4l"]
+[ext_resource type="PackedScene" uid="uid://c6rnin8qsxh7v" path="res://polvinha.glb" id="2_8wvru"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ghnuj"]
 radius = 1.5
@@ -13,11 +13,15 @@ script = ExtResource("1_pnymw")
 
 [node name="Pivot" type="Node3D" parent="."]
 
-[node name="amigo" parent="Pivot" instance=ExtResource("2_03n4l")]
+[node name="polvinha" parent="Pivot" instance=ExtResource("2_8wvru")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 1.22887, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.608072, 0, 0, 0, 0.608072, 0, 0, 0, 0.608072, 0, 0.933784, 0)
 shape = SubResource("SphereShape3D_ghnuj")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01618, 0)
+aabb = AABB(-1, -1, -1.30913, 2, 2, 2.61826)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

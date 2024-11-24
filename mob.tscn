@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqbi8q6a8p5wb"]
 
 [ext_resource type="Script" path="res://mob.gd" id="1_snxmm"]
-[ext_resource type="PackedScene" uid="uid://bg68kn11j3ft8" path="res://art/mob.glb" id="2_w446o"]
+[ext_resource type="PackedScene" uid="uid://dyvljcusrs5ky" path="res://tubarao.glb" id="2_eipgy"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ghnuj"]
-radius = 1.5
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jhve3"]
+radius = 0.304801
+height = 1.25968
 
 [node name="Mob" type="CharacterBody3D" groups=["mob"]]
 collision_layer = 2
@@ -13,11 +14,15 @@ script = ExtResource("1_snxmm")
 
 [node name="Pivot" type="Node3D" parent="."]
 
-[node name="mob" parent="Pivot" instance=ExtResource("2_w446o")]
+[node name="tubarao" parent="Pivot" instance=ExtResource("2_eipgy")]
+transform = Transform3D(-1.7, 0, -1.48619e-07, 0, 1.7, 0, 1.48619e-07, 0, -1.7, 0, 0.877873, -1.51569)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_ghnuj")
+transform = Transform3D(2.1, 0, 0, 0, -1.19184e-07, 1.30439, 0, -2.7266, -5.70169e-08, 0.00331807, 0.848958, 0.171964)
+shape = SubResource("CapsuleShape3D_jhve3")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1.32, 0, 0, 0, 1.32, 0, 0, 0, 1.32, 0, 0.849224, 0.237806)
+aabb = AABB(-0.772849, -0.628697, -1.50775, 1.5457, 1.25739, 3.01551)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
