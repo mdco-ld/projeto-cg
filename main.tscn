@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d3icya6p4g4ha"]
+[gd_scene load_steps=18 format=3 uid="uid://d3icya6p4g4ha"]
 
 [ext_resource type="PackedScene" uid="uid://b3dqtg4ixmken" path="res://player.tscn" id="1_lox15"]
 [ext_resource type="Script" path="res://main.gd" id="1_wjhy3"]
@@ -9,10 +9,23 @@
 [ext_resource type="PackedScene" uid="uid://cpk2pntxkx023" path="res://coralespiral.glb" id="7_udxkl"]
 [ext_resource type="PackedScene" uid="uid://cn4wiafttjv54" path="res://coralbolha.glb" id="8_peuvv"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqnp4"]
+albedo_color = Color(0.065887, 0.391723, 0.7379, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_aga7c"]
+material = SubResource("StandardMaterial3D_tqnp4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y8yna"]
+size = Vector3(0.067749, 1.16528, 2.01759)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_gwcb1"]
 size = Vector3(60, 2, 60)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27dfq"]
+albedo_color = Color(0.90086, 0.671742, 0.466427, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_v1cti"]
+material = SubResource("StandardMaterial3D_27dfq")
 size = Vector3(60, 2, 60)
 
 [sub_resource type="Curve3D" id="Curve3D_5q1q7"]
@@ -30,6 +43,50 @@ material = SubResource("StandardMaterial3D_ldree")
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_wjhy3")
+
+[node name="Parede Esquerda" type="StaticBody3D" parent="."]
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Parede Esquerda"]
+transform = Transform3D(3.93403e-06, -10, 7.86805e-07, 6.35275e-21, -4.37114e-07, -18, 30, 1.31134e-06, -1.67126e-13, 30, 17, 0)
+mesh = SubResource("PlaneMesh_aga7c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Parede Esquerda"]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 30.6022, 17.6877, 0.0979614)
+shape = SubResource("BoxShape3D_y8yna")
+
+[node name="Parede Direita" type="StaticBody3D" parent="."]
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Parede Direita"]
+transform = Transform3D(-1.31134e-06, 10, -7.86805e-07, 0, -4.37114e-07, -18, -30, -4.37114e-07, 9.83412e-14, -30, 17, 0)
+mesh = SubResource("PlaneMesh_aga7c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Parede Direita"]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, -30.3978, 17.6877, 0.0979614)
+shape = SubResource("BoxShape3D_y8yna")
+
+[node name="Parede Fundo" type="StaticBody3D" parent="."]
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Parede Fundo"]
+transform = Transform3D(30, 0, 0, 0, -4.37114e-07, -18, 0, 10, -7.86805e-07, 0, 17, -30)
+mesh = SubResource("PlaneMesh_aga7c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Parede Fundo"]
+transform = Transform3D(-1.31134e-06, 0, -30, 0, 30, 0, 30, 0, -1.31134e-06, -0.0706005, 17.6877, -30.902)
+shape = SubResource("BoxShape3D_y8yna")
+
+[node name="Parede Frente" type="StaticBody3D" parent="."]
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Parede Frente"]
+transform = Transform3D(-30, 8.74228e-07, -6.87847e-14, 0, -4.37114e-07, -18, -2.62268e-06, -10, 7.86805e-07, 0, 17, 30)
+mesh = SubResource("PlaneMesh_aga7c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Parede Frente"]
+transform = Transform3D(-1.31134e-06, 0, -30, 0, 30, 0, 30, 0, -1.31134e-06, -0.0706005, 17.6877, 30.098)
+shape = SubResource("BoxShape3D_y8yna")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -52,7 +109,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -1, -3.53555, 31.0209)
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -2, -0.707125, 39.5062)
 size = 20.0
 
 [node name="SpawnPath" type="Path3D" parent="."]

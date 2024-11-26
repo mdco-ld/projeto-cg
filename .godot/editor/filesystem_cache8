@@ -1,6 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1732583148
-amigo.tscn::PackedScene::8924768693015491106::1732579020::0::1::::<><>::res://mob.gd<>uid://gwwvndvjj6cr::::res://polvinha.glb
+::res://::1732663428
+amigo.tscn::PackedScene::8924768693015491106::1732584016::0::1::::<><>::res://mob.gd<>uid://cvx6ncqyc1rke::::res://polvinha.glb
+areia.glb::PackedScene::6595905403999788467::1732663297::1732663298::1::::<><>::
 coralbolha.glb::PackedScene::5746513358353522565::1732488317::1732488319::1::::<><>::
 coralespiral.glb::PackedScene::5847984658424701326::1732488326::1732488328::1::::<><>::uid://quu8mqu6ufrc::::res://coralespiral_20943_Spiral_Wire_Coral_v1_diff.jpg
 coralespiral_20943_Spiral_Wire_Coral_v1_diff.jpg::CompressedTexture2D::1165582980291904232::1732488326::1732488329::1::::<><>::
@@ -14,11 +15,12 @@ kaka.gd::GDScript::-1::1732465259::0::1::::<>CharacterBody3D<>::
 kaka.tscn::PackedScene::8489496337075306410::1732469368::0::1::::<><>::res://kaka.gd<>uid://dam1jweunaodw::::res://art/kaka/KakaPrime.glb
 level_2.tscn::PackedScene::1648630025171224417::1732469368::0::1::::<><>::uid://ds7m08tv8poec::::res://kaka.tscn
 main.gd::GDScript::-1::1732465259::0::1::::<>Node3D<>::
-main.tscn::PackedScene::9141229036625430146::1732579020::0::1::::<><>::uid://b3dqtg4ixmken::::res://player.tscn<>res://main.gd<>res://score_label.gd<>res://health_label.gd<>uid://ylvrweafsayd::::res://coraltree.glb<>uid://b2ti8nqdk1jsp::::res://coralgg.glb<>uid://cpk2pntxkx023::::res://coralespiral.glb<>uid://cn4wiafttjv54::::res://coralbolha.glb
+main.tscn::PackedScene::9141229036625430146::1732584016::0::1::::<><>::uid://b3dqtg4ixmken::::res://player.tscn<>res://main.gd<>res://score_label.gd<>res://health_label.gd<>uid://ylvrweafsayd::::res://coraltree.glb<>uid://b2ti8nqdk1jsp::::res://coralgg.glb<>uid://cpk2pntxkx023::::res://coralespiral.glb<>uid://cn4wiafttjv54::::res://coralbolha.glb
 mob.gd::GDScript::-1::1732469818::0::1::::<>CharacterBody3D<>::
-mob.tscn::PackedScene::3512052115103935533::1732579020::0::1::::<><>::res://mob.gd<>uid://dyvljcusrs5ky::::res://tubarao.glb
-player.gd::GDScript::-1::1732465259::0::1::::<>CharacterBody3D<>::
-player.tscn::PackedScene::4358907201122774989::1732579020::0::1::::<><>::uid://cyr5a5nfen3a6::::res://art/player.glb<>res://player.gd
+mob.tscn::PackedScene::3512052115103935533::1732584016::0::1::::<><>::res://mob.gd<>uid://dyvljcusrs5ky::::res://tubarao.glb
+paredes.glb::PackedScene::3490665494301770574::1732663428::1732663429::1::::<><>::
+player.gd::GDScript::-1::1732584016::0::1::::<>CharacterBody3D<>::
+player.tscn::PackedScene::4358907201122774989::1732584016::0::1::::<><>::uid://cyr5a5nfen3a6::::res://art/player.glb<>res://player.gd
 polvinha.glb::PackedScene::6296193345082516748::1732583148::1732583149::1::::<><>::
 score_label.gd::GDScript::-1::1732465259::0::1::::<>Label<>::
 tubarao.glb::PackedScene::8887830327076997316::1732487181::1732487183::1::::<><>::uid://bkplwkq7bu6ax::::res://tubarao_Material.png

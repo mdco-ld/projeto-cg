@@ -1,14 +1,14 @@
+CollisionShape3D
+MeshInstance3D
+StaticBody3D
 CharacterBody3D
 Node3D
 Label
 ColorRect
 Control
-CollisionShape3D
 Area3D
 Timer
 PathFollow3D
-MeshInstance3D
 Path3D
 VisibleOnScreenNotifier3D
 Camera3D
-Marker3D

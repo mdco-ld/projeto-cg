@@ -55,6 +55,8 @@ jump={
 
 3d_physics/layer_1="player"
 3d_physics/layer_2="mob"
+3d_physics/layer_3="mundo"
+3d_physics/layer_4="amigo"
 
 [rendering]
 
