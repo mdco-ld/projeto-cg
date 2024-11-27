@@ -20,9 +20,3 @@ transform = Transform3D(-1.7, 0, -1.48619e-07, 0, 1.7, 0, 1.48619e-07, 0, -1.7, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(2.1, 0, 0, 0, -1.19184e-07, 1.30439, 0, -2.7266, -5.70169e-08, 0.00331807, 0.848958, 0.171964)
 shape = SubResource("CapsuleShape3D_jhve3")
-
-[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
-transform = Transform3D(1.32, 0, 0, 0, 1.32, 0, 0, 0, 1.32, 0, 0.849224, 0.237806)
-aabb = AABB(-0.772849, -0.628697, -1.50775, 1.5457, 1.25739, 3.01551)
-
-[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

@@ -2,3 +2,8 @@ res://main.tscn
 res://player.tscn
 res://mob.tscn
 res://amigo.tscn
+res://player.gd
+res://main.gd
+res://score_label.gd
+res://health_label.gd
+res://mob.gd

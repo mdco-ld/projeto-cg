@@ -1,10 +1,10 @@
+ColorRect
 CollisionShape3D
 MeshInstance3D
 StaticBody3D
 CharacterBody3D
 Node3D
 Label
-ColorRect
 Control
 Area3D
 Timer

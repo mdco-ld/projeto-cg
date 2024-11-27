@@ -109,7 +109,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -2, -0.707125, 39.5062)
+transform = Transform3D(1, 0, 0, 0, 0.894934, -0.446198, 0, 0.446198, 0.894934, -1, -3.41421, 13.3437)
 size = 20.0
 
 [node name="SpawnPath" type="Path3D" parent="."]
@@ -206,6 +206,15 @@ offset_bottom = 375.0
 text = "Para seguir para a próxima fase, 
 aperte ESPAÇO"
 
+[node name="ColorRect" type="ColorRect" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.392157, 0.72549, 0.996078, 0.301961)
+
 [node name="coraltree" parent="." instance=ExtResource("5_su8vk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 23)
 
@@ -243,5 +252,6 @@ transform = Transform3D(1.17, 0, 0, 0, 1.17, 0, 0, 0, 1.17, 14, 0, 17)
 [connection signal="catch" from="Player" to="UserInterface/ScoreLabel" method="_on_player_catch"]
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="hit" from="Player" to="UserInterface/HealthLabel" method="_on_player_hit"]
+[connection signal="moved" from="Player" to="." method="_on_player_moved"]
 [connection signal="timeout" from="AmigoTimer" to="." method="_on_amigo_timer_timeout"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_timer_timeout"]

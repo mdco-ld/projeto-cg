@@ -27,4 +27,5 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterDetector"]
 shape = SubResource("CylinderShape3D_ku1ui")
 
+[connection signal="moved" from="." to="." method="_on_moved"]
 [connection signal="body_entered" from="CharacterDetector" to="." method="_on_character_detector_body_entered"]
