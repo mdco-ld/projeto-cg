@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@export var min_speed = 8
-@export var max_speed = 13
+@export var min_speed = 3
+@export var max_speed = 6
 
 var player_node
 var timer = 0

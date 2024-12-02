@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dam1jweunaodw" path="res://art/kaka/KakaPrime.glb" id="1_vu8n1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6q0nx"]
-radius = 1.712
-height = 6.242
+radius = 1.57209
+height = 5.7973
 
 [node name="Kaka" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
@@ -17,5 +17,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 [node name="KakaPrime" parent="Pivot" instance=ExtResource("1_vu8n1")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(0.803256, 0, 0, 0, 0.803256, 0, 0, 0, 0.803256, 0, 4.28515, 0)
 shape = SubResource("CapsuleShape3D_6q0nx")

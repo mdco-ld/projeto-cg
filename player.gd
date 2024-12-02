@@ -39,7 +39,7 @@ func _physics_process(delta):
 	target_velocity.z = direction.z * speed
 	target_velocity.y = direction.y * speed
 	
-	if position.y > 15:
+	if position.y > 30:
 		target_velocity.y = 0
 	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
 		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
