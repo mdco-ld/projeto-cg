@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkplwkq7bu6ax"
+uid="uid://qanxwqyc2ono"
 path.s3tc="res://.godot/imported/tubarao_Material.png-266eb468bc82b0e4ca57f84646a784f2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "eb5349b87b4f91f38120bb030505ac6a"
 }
 
 [deps]

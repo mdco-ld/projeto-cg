@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://d3icya6p4g4ha"]
+[gd_scene load_steps=17 format=3 uid="uid://d3icya6p4g4ha"]
 
 [ext_resource type="PackedScene" uid="uid://b3dqtg4ixmken" path="res://player.tscn" id="1_lox15"]
 [ext_resource type="Script" path="res://main.gd" id="1_wjhy3"]
 [ext_resource type="Script" path="res://score_label.gd" id="3_bkxlk"]
 [ext_resource type="Script" path="res://health_label.gd" id="4_wiqmn"]
 [ext_resource type="PackedScene" uid="uid://ylvrweafsayd" path="res://coraltree.glb" id="5_su8vk"]
-[ext_resource type="PackedScene" uid="uid://b2ti8nqdk1jsp" path="res://coralgg.glb" id="6_lt55f"]
 [ext_resource type="PackedScene" uid="uid://cpk2pntxkx023" path="res://coralespiral.glb" id="7_udxkl"]
 [ext_resource type="PackedScene" uid="uid://cn4wiafttjv54" path="res://coralbolha.glb" id="8_peuvv"]
 
@@ -73,7 +72,7 @@ transform = Transform3D(1.76, 0, 0, 0, 1.95, 0, 0, 0, 1, 0, 0, 25)
 collision_layer = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Parede Fundo"]
-transform = Transform3D(30, 0, 0, 0, -4.37114e-07, -18, 0, 10, -7.86805e-07, 0, 17, -70)
+transform = Transform3D(30, 5.4186e-07, -4.84461e-14, 1.02024e-13, -4.37114e-07, -18, 9.53674e-07, 10, -7.86805e-07, 0, 17, -70)
 mesh = SubResource("PlaneMesh_aga7c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Parede Fundo"]
@@ -102,10 +101,6 @@ shape = SubResource("BoxShape3D_gwcb1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("BoxMesh_v1cti")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.248403, -0.617992, -0.74591, 0, -0.770046, 0.637989, -0.968657, -0.158478, -0.191282, 0, 40, 0)
-shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_lox15")]
 
@@ -228,8 +223,18 @@ transform = Transform3D(0.848528, 0, 0.848528, 0, 1.2, 0, -0.848528, 0, 0.848528
 [node name="coraltree3" parent="." instance=ExtResource("5_su8vk")]
 transform = Transform3D(-0.388229, 0, -1.44889, 0, 1.5, 0, 1.44889, 0, -0.388229, 15, 0, 20)
 
-[node name="coralgg" parent="." instance=ExtResource("6_lt55f")]
+[node name="coralgg" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -16, 0, -14)
+script = null
 
 [node name="coralespiral" parent="." instance=ExtResource("7_udxkl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -16)
@@ -251,6 +256,11 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 12, 0, 21)
 
 [node name="coralespiral5" parent="." instance=ExtResource("7_udxkl")]
 transform = Transform3D(1.17, 0, 0, 0, 1.17, 0, 0, 0, 1.17, 14, 0, 17)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
+omni_range = 85.026
+omni_attenuation = -0.099
 
 [connection signal="catch" from="Player" to="." method="_on_player_catch"]
 [connection signal="catch" from="Player" to="UserInterface/ScoreLabel" method="_on_player_catch"]
