@@ -1,8 +1,7 @@
 res://main.tscn
 res://player.tscn
 res://mob.tscn
-res://amigo.tscn
 res://kaka.tscn
-res://amigo.gd
+res://amigo.tscn
 res://mob.gd
-res://player.gd
+res://amigo.gd

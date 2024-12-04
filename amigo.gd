@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@export var min_speed = 8
-@export var max_speed = 13
+@export var min_speed = 5
+@export var max_speed = 10
 
 var timer = 0
 var follow = true

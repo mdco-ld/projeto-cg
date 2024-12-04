@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@export var min_speed = 3
-@export var max_speed = 6
+@export var min_speed = 4
+@export var max_speed = 8
 
 var player_node
 var timer = 0
@@ -9,7 +9,7 @@ var follow = true
 
 func _process(delta):
 	timer += delta
-	if timer > 3:
+	if timer > 4.5:
 		follow = false
 
 func _physics_process(_delta):

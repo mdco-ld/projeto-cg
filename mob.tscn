@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dyvljcusrs5ky" path="res://tubarao.glb" id="2_eipgy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jhve3"]
-radius = 0.304801
+radius = 0.243325
 height = 1.25968
 
 [node name="Mob" type="CharacterBody3D" groups=["mob"]]

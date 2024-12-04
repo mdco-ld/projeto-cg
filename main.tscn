@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://d3icya6p4g4ha"]
+[gd_scene load_steps=22 format=3 uid="uid://d3icya6p4g4ha"]
 
 [ext_resource type="PackedScene" uid="uid://b3dqtg4ixmken" path="res://player.tscn" id="1_lox15"]
 [ext_resource type="Script" path="res://main.gd" id="1_wjhy3"]
 [ext_resource type="Script" path="res://score_label.gd" id="3_bkxlk"]
+[ext_resource type="FontFile" uid="uid://dgucclhx8iryh" path="res://fonts/Montserrat-Medium.ttf" id="3_tnmxj"]
 [ext_resource type="Script" path="res://health_label.gd" id="4_wiqmn"]
 [ext_resource type="PackedScene" uid="uid://ylvrweafsayd" path="res://coraltree.glb" id="5_su8vk"]
 [ext_resource type="PackedScene" uid="uid://cpk2pntxkx023" path="res://coralespiral.glb" id="7_udxkl"]
@@ -39,6 +40,26 @@ albedo_color = Color(0.227451, 0.239216, 1, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_8adub"]
 material = SubResource("StandardMaterial3D_ldree")
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ccmt"]
+font = ExtResource("3_tnmxj")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qr32r"]
+font = ExtResource("3_tnmxj")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g0qyk"]
+font = ExtResource("3_tnmxj")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wafct"]
+font = ExtResource("3_tnmxj")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_wjhy3")
@@ -137,10 +158,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 14)
 mesh = SubResource("CylinderMesh_8adub")
 
 [node name="AmigoTimer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 4.0
 autostart = true
 
 [node name="MobTimer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [node name="UserInterface" type="Control" parent="."]
@@ -157,7 +179,8 @@ offset_left = 22.0
 offset_top = 6.0
 offset_right = 94.0
 offset_bottom = 29.0
-text = "Pontos: 0"
+text = "PONTOS: 0"
+label_settings = SubResource("LabelSettings_2ccmt")
 script = ExtResource("3_bkxlk")
 
 [node name="HealthLabel" type="Label" parent="UserInterface"]
@@ -166,8 +189,9 @@ offset_left = 24.0
 offset_top = 32.0
 offset_right = 94.0
 offset_bottom = 55.0
-text = "Vida: 5
+text = "VIDAS: 5
 "
+label_settings = SubResource("LabelSettings_qr32r")
 script = ExtResource("4_wiqmn")
 
 [node name="RetryScreen" type="ColorRect" parent="UserInterface"]
@@ -180,12 +204,17 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.329412)
 
 [node name="Label" type="Label" parent="UserInterface/RetryScreen"]
+top_level = true
 layout_mode = 0
-offset_left = 445.0
-offset_top = 352.0
-offset_right = 750.0
-offset_bottom = 375.0
-text = "Para tentar novamente, aperte ESPAÇO"
+offset_left = 317.0
+offset_top = 286.0
+offset_right = 890.0
+offset_bottom = 373.0
+text = "Suas vidas acabaram!
+Aperte ESPAÇO para tentar novamente!"
+label_settings = SubResource("LabelSettings_g0qyk")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NextLevelScreen" type="ColorRect" parent="UserInterface"]
 layout_mode = 1
@@ -197,13 +226,18 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.329412)
 
 [node name="Label" type="Label" parent="UserInterface/NextLevelScreen"]
+top_level = true
 layout_mode = 0
-offset_left = 445.0
-offset_top = 352.0
-offset_right = 750.0
-offset_bottom = 375.0
-text = "Para seguir para a próxima fase, 
-aperte ESPAÇO"
+offset_left = 357.0
+offset_top = 272.0
+offset_right = 837.0
+offset_bottom = 404.0
+text = "PARABÉNS! 
+Você alcançou a próxima fase!
+Aperte ESPAÇO para continuar!"
+label_settings = SubResource("LabelSettings_wafct")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="UserInterface"]
 layout_mode = 1
@@ -222,19 +256,6 @@ transform = Transform3D(0.848528, 0, 0.848528, 0, 1.2, 0, -0.848528, 0, 0.848528
 
 [node name="coraltree3" parent="." instance=ExtResource("5_su8vk")]
 transform = Transform3D(-0.388229, 0, -1.44889, 0, 1.5, 0, 1.44889, 0, -0.388229, 15, 0, 20)
-
-[node name="coralgg" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -16, 0, -14)
-script = null
 
 [node name="coralespiral" parent="." instance=ExtResource("7_udxkl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -16)
