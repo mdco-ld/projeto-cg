@@ -179,7 +179,8 @@ offset_left = 22.0
 offset_top = 6.0
 offset_right = 94.0
 offset_bottom = 29.0
-text = "PONTOS: 0"
+text = "PONTOS: 0
+"
 label_settings = SubResource("LabelSettings_2ccmt")
 script = ExtResource("3_bkxlk")
 

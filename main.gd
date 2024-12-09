@@ -35,7 +35,7 @@ func _on_player_hit() -> void:
 		
 func _on_player_catch() -> void:
 	score += 1
-	if(score >= 5):
+	if(score >= 10):
 		$AmigoTimer.stop()
 		$MobTimer.stop()
 		$Player.queue_free()

@@ -39,13 +39,13 @@ transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74
 
 [node name="Skeleton3D" parent="Pivot/5YearsOldBoy/Esqueleto" index="0"]
 bones/4/rotation = Quaternion(0.55207, 0.520559, 0.485457, -0.434244)
-bones/5/rotation = Quaternion(-0.0585928, 0.614597, -0.105289, 0.779585)
+bones/5/rotation = Quaternion(0.164914, 0.596309, -0.00460184, 0.785619)
 bones/27/rotation = Quaternion(0.55207, -0.520559, -0.485457, -0.434245)
-bones/28/rotation = Quaternion(0.127925, -0.0516052, 0.188684, 0.972302)
+bones/28/rotation = Quaternion(-0.108184, -0.0915807, 0.141256, 0.979773)
 bones/55/rotation = Quaternion(0.0570531, 0.99817, 0.0199515, -0.00170296)
 bones/56/rotation = Quaternion(-3.55811e-07, 0.613304, 0.789847, -1.19415e-07)
-bones/60/rotation = Quaternion(0.995458, 0.0783887, 0.041744, 0.0342893)
-bones/63/rotation = Quaternion(0.983082, -0.00065624, -0.00862287, 0.182961)
+bones/60/rotation = Quaternion(0.985247, 0.0850087, 0.0469875, 0.140908)
+bones/63/rotation = Quaternion(0.998677, -0.00136486, -0.0059814, 0.051064)
 bones/64/rotation = Quaternion(0.0705111, -0.0117513, -0.0630223, 0.995449)
 bones/65/rotation = Quaternion(-0.704209, 0.0444457, -0.0442447, 0.707218)
 
